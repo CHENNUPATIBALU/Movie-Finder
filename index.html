@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="movie_finder.css">
+        <script src="movie-finder.js"></script>
+        <title>Movie Finder</title>
+    </head>
+    <body>
+        <div class="search-div">
+            <input id="movie_name" type="text" placeholder="Enter the Movie name" ><button id="submit-button" onclick="find_movie();">Search</button>
+        </div>
+        <div id="movie_details">
+            <table id="movie-table" style="display: none;">
+                <caption id="movie-title"></caption>
+                <tr>
+                    <th>Title</th>
+                    <td id="title"></td>
+                </tr>
+                <tr>
+                    <th>Year</th>
+                    <td id="year"></td>
+                </tr>
+                <tr>
+                    <th>Released on</th>
+                    <td id="release-date"></td>
+                </tr>
+                <tr>
+                    <th>Genre</th>
+                    <td id="genre"></td>
+                </tr>
+                <tr>
+                    <th>Productions</th>
+                    <td id="productions"></td>
+                </tr>
+                <tr>
+                    <th>Director</th>
+                    <td id="director"></td>
+                </tr>
+                <tr>
+                    <th>Writer</th>
+                    <td id="writer"></td>
+                </tr>
+                <tr>
+                    <th>Cast</th>
+                    <td id="cast"></td>
+                </tr>
+                <tr>
+                    <th>Story</th>
+                    <td id="story"></td>
+                </tr>
+                <tr>
+                    <th>Country</th>
+                    <td id="country"></td>
+                </tr>
+                <tr>
+                    <th>Language</th>
+                    <td id="language"></td>
+                </tr>
+                <tr>
+                    <th>Awards</th>
+                    <td id="awards"></td>
+                </tr>
+                <tr>
+                    <th>IMDB Rating</th>
+                    <td id="rating"></td>
+                </tr>
+                <tr>
+                    <th>Box Office</th>
+                    <td id="box-office"></td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
