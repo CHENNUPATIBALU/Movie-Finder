@@ -2,11 +2,23 @@
     width: 500px;
     margin: 0 auto;
 }
+#web-logo{
+    content: url("Images/MovieFinder.png");
+    margin-left: 40px;
+    width: 300px;
+    height:300px;
+}
 table{
     border:2px solid black
 }
 td{
-    border:2px solid black;
+    background-color: rgb(213, 238, 180);
+}
+#image-data{
+    background-color: white;
+}
+th{
+    background-color: rgb(162, 201, 125);
 }
 #movie-table{
     margin:0 auto;
@@ -41,4 +53,34 @@ input{
 caption{
     font-family: "Verdana",sans-serif,monospace,"Aerial Black","Lucida Console";
     font-size: 20px;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    button{
+        width: 100px;
+        height: 30px;
+        cursor: pointer;
+        margin-left: 20px;
+        border-radius: 15px;
+        outline: none;
+        background-color: rgb(148, 148, 196);
+        margin-top: 5%;
+        box-shadow: 0 5px #999;
+    }
+    input{
+        width: 150px;
+        height: 20px;
+        margin: 0 auto;
+        outline: none;
+        text-align: justify;
+        font-size: 10px;
+        border-radius:110px;
+    }
+    #web-logo{
+        content: url("Images/MovieFinder.png");
+        margin-left: 40px;
+        width: 100px;
+        height:100px;
+    }
 }
