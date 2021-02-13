@@ -19,7 +19,7 @@ function find_movie(){
                 if(response=="True"){
                     toggleTable(true);
                     show_image(movie_poster,400,400,"movie poster");
-                    document.getElementById("movie-title").innerHTML = movie_data.Title;
+                    document.getElementById("movie-title").innerHTML = "<b>Movie Title: </b>"+movie_data.Title;
                     document.getElementById("title").innerHTML = movie_data.Title;
                     document.getElementById("year").innerHTML = movie_data.Year;
                     document.getElementById("release-date").innerHTML = movie_data.Released;
