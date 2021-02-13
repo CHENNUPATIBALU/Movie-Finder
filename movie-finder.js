@@ -2,7 +2,7 @@ function find_movie(){
     var movie_name = document.getElementById("movie_name").value;
     if(movie_name==""){
         alert("Please Enter the Movie Name");
-        toggleTable(false);
+        showTable(false);
     }
     else{
     httpRequest = new XMLHttpRequest();
@@ -17,7 +17,7 @@ function find_movie(){
                 movie_poster = movie_data.Poster;
                 response = movie_data.Response;
                 if(response=="True"){
-                    toggleTable(true);
+                    showTable(true);
                     show_image(movie_poster,400,400,"movie poster");
                     document.getElementById("movie-title").innerHTML = "<b>Movie Title: </b>"+movie_data.Title;
                     document.getElementById("title").innerHTML = movie_data.Title;
@@ -51,9 +51,9 @@ function show_image(src, width, height, alt) {
 
     document.getElementById("poster").src = img.src;
 }
-function toggleTable(hide)
+function showTable(show)
 {
-    if (hide) {
+    if (show) {
        document.getElementById("movie-table").style.display="table";
 
     } else {
