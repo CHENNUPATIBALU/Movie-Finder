@@ -15,16 +15,22 @@ td{
 button{
     width: 100px;
     height: 40px;
+    cursor: pointer;
     margin-left: 20px;
+    border-radius: 15px;
+    outline: none;
     background-color: rgb(148, 148, 196);
     margin-top: 5%;
+    box-shadow: 0 5px #999;
 }
 input{
     width: 350px;
     height: 50px;
     margin: 0 auto;
+    outline: none;
+    text-align: justify;
     font-size: 20px;
-    border-radius: 2%;
+    border-radius:110px;
 }
 #movie-details{
     text-align: left;
@@ -33,6 +39,6 @@ input{
     margin: 0 auto;
 }
 caption{
-    font-family: "Verdana",sans-serif,monospace,"Aerial Black","Lucida Con";
+    font-family: "Verdana",sans-serif,monospace,"Aerial Black","Lucida Console";
     font-size: 20px;
 }
