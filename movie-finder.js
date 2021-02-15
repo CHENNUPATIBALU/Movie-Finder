@@ -32,6 +32,7 @@ function find_movie(){
                     document.getElementById("language").innerHTML = movie_data.Language;
                     document.getElementById("country").innerHTML = movie_data.Country;
                     document.getElementById("awards").innerHTML = movie_data.Awards;
+                    document.getElementById("imdb-id").innerHTML = movie_data.imdbID;
                     document.getElementById("rating").innerHTML = movie_data.imdbRating;
                     document.getElementById("box-office").innerHTML = movie_data.BoxOffice;
                 }
