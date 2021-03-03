@@ -1,3 +1,6 @@
+body{
+    background-image: url("Images/bg_image.jpg");
+}
 .search-div{
     width: 500px;
     margin: 0 auto;
@@ -31,7 +34,7 @@ button{
     margin-left: 180px;
     border-radius: 15px;
     outline: none;
-    background-color: rgb(148, 148, 196);
+    background-color: rgba(78, 201, 29, 0.562);
     margin-top: 5%;
     box-shadow: 0 5px #999;
 }
