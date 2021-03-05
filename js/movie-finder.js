@@ -5,34 +5,29 @@ function find_movie(){
         showTable(false);
     }
     else{
-    	try{
-    		httpRequest = new XMLHttpRequest();
-    url = "https://www.omdbapi.com/?t="+movie_name+"&apikey=333e06b5";
-    httpRequest.open("GET",url);
-    httpRequest.send();
+    	httpRequest = new XMLHttpRequest();
+        url = "https://www.omdbapi.com/?t="+movie_name+"&apikey=333e06b5";
+        httpRequest.open("GET",url);
+        httpRequest.send();
 
-    httpRequest.onreadystatechange = 
-        function(){
-            if(this.readyState == 4 && this.status == 200){
-                movie_data = JSON.parse(this.responseText);
-                movie_poster = movie_data.Poster;
-                response = movie_data.Response;
-                if(response=="True" && movie_poster!='N/A'){
-                    set_data(movie_data,movie_poster);
+        httpRequest.onreadystatechange = 
+            function(){
+                if(this.readyState == 4 && this.status == 200){
+                    movie_data = JSON.parse(this.responseText);
+                    movie_poster = movie_data.Poster;
+                    response = movie_data.Response;
+                    if(response=="True" && movie_poster!='N/A'){
+                        set_data(movie_data,movie_poster);
+                    }
+                    else if(response=="True" && movie_poster=='N/A'){
+                        alert("Movie found but Poster is not available");
+                        set_data(movie_data,"http://bit.ly/no-poster-found");
+                    }
+                    else{
+                        alert("Movie not found");
+                    }
                 }
-                else if(response=="True" && movie_poster=='N/A'){
-                    alert("Movie found but Poster is not available");
-                    set_data(movie_data,"http://bit.ly/no-poster-found");
-                }
-                else{
-                    alert("Movie not found");
-                }
-    		}
-    	}
-        }
-    	catch(err){
-    		alert("Check your internet connection"+err);
-    	}
+            }
     }
 }
 function show_image(src, width, height, alt) {
