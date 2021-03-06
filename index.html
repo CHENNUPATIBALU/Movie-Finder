@@ -9,11 +9,20 @@
         <title>Movie Finder</title>
     </head>
     <body>
-        <div class="search-div">
+        
+
+        <!--Form-->
+        <form  onsubmit="return false" >
+            <!--Website Logo-->
             <img id="web-logo">
-            <input id="movie_name" type="text" placeholder="    Enter the Movie name"><button id="submit-button" onclick="find_movie();">Search</button>
-        </div>
+            <input type="text" placeholder="Enter the Movie name" id ="movie_name">
+            <button class="submit" type="submit" id="submit-button" onclick="find_movie();"> Search</button>
+            
+            <img id="movie_result">
+        </form>
+
         <div id="movie_details">
+            <!--Movie Data Table-->
             <table id="movie-table" style="display: none;">
                 <caption id="movie-title"></caption>
                 <tr>

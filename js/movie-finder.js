@@ -2,7 +2,7 @@ function find_movie(){
     var movie_name = document.getElementById("movie_name").value;
     if(movie_name==""){
         alert("Please Enter the Movie Name");
-        showTable(false);
+        showResult(false);
     }
     else{
     	httpRequest = new XMLHttpRequest();
@@ -21,10 +21,10 @@ function find_movie(){
                     }
                     else if(response=="True" && movie_poster=='N/A'){
                         alert("Movie found but Poster is not available");
-                        set_data(movie_data,"http://bit.ly/no-poster-found");
+                        set_data(movie_data,"/Images/no_poster.gif");
                     }
                     else{
-                        alert("Movie not found");
+                        showResult(false);
                     }
                 }
             }
@@ -41,7 +41,7 @@ function show_image(src, width, height, alt) {
 }
 
 function set_data(movie_data,movie_poster){
-    showTable(true);
+    showResult(true);
     show_image(movie_poster,400,400,"movie poster");
     document.getElementById("movie-title").innerHTML = "<b>Movie Title: </b>"+movie_data.Title;
     document.getElementById("title").innerHTML = movie_data.Title;
@@ -59,12 +59,16 @@ function set_data(movie_data,movie_poster){
     document.getElementById("rating").innerHTML = movie_data.imdbRating;
     document.getElementById("box-office").innerHTML = movie_data.BoxOffice;
 }
-function showTable(show)
+function showResult(show)
 {
     if (show) {
        document.getElementById("movie-table").style.display="table";
+       document.getElementById("movie_result").style.visibility = "hidden";
+       document.getElementById("movie_result").style.display = "none";
 
     } else {
        document.getElementById("movie-table").style.display="none";
+       document.getElementById("movie_result").style.display = "block";
+       document.getElementById("movie_result").style.visibility = "visible";
     }
 }
