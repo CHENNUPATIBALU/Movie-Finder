@@ -2,24 +2,26 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="favi icon" type="image" href="Images/MovieFinder.png">
-        <link rel="stylesheet" type="text/css" href="styles/movie_finder.css">
-        <script src="js/movie-finder.js"></script>
+        <link rel="favi icon" type="image" href="https://res.cloudinary.com/chennupati-balu/image/upload/v1615352321/MovieFinder_vchrl8.png">
+        <link rel="stylesheet" type="text/css" href="https://res.cloudinary.com/chennupati-balu/raw/upload/v1615352536/movie_finder_arsxtg.css">
+        <script src="https://res.cloudinary.com/chennupati-balu/raw/upload/v1615352795/movie-finder_goqdgi.js"></script>
 
         <title>Movie Finder</title>
     </head>
     <body>
-        
 
         <!--Form-->
         <form  onsubmit="return false" >
             <!--Website Logo-->
             <img id="web-logo">
             <input type="text" placeholder="Enter the Movie name" id ="movie_name">
-            <button class="submit" type="submit" id="submit-button" onclick="find_movie();"> Search</button>
-            
-            <img id="movie_result">
+            <button class="submit" type="submit" id="submit-button" onclick="find_movie();">Search</button>
         </form>
+
+        <dialog id="movie_result_dialog" title="Movie Not Found">
+            <img id="movie_result">
+            <button id="try-again-button" onclick="try_again_click();">Try Again</button>
+        </dialog>
 
         <div id="movie_details">
             <!--Movie Data Table-->
