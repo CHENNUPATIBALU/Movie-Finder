@@ -3,20 +3,19 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="favi icon" type="image" href="https://res.cloudinary.com/chennupati-balu/image/upload/v1615352321/MovieFinder_vchrl8.png">
-        <link rel="stylesheet" type="text/css" href="https://res.cloudinary.com/chennupati-balu/raw/upload/v1616647521/movie_finder.css">
-        <script src="https://res.cloudinary.com/chennupati-balu/raw/upload/v1616225183/movie-finder.js"></script>
-
+        <link rel="favi icon" type="image" href="Images/logo.png">
+        <link rel="stylesheet" type="text/css" href="index.css">
+        <script src="index.js"></script>
         <title>Movie Finder</title>
     </head>
     <body>
 
         <!--Form-->
-        <form  onsubmit="return false" >
+        <form name="movie_form" onsubmit="return false">
             <!--Website Logo-->
             <img id="web-logo">
-            <input type="text" placeholder="Enter the Movie name" id ="movie_name">
-            <button class="submit" type="submit" id="submit-button" onclick="find_movie();">Search</button>
+            <input type="text" placeholder="Enter the Movie name" id ="movie_name" name="movie_name">
+            <input type="submit" class="submit" id="submit-button" onclick="find_movie(document.forms['movie_form']['movie_name'].value);" value="Search">
         </form>
 
         <dialog id="movie_result_dialog" title="Movie Not Found">
@@ -94,11 +93,14 @@
                 </tr>
             </table>
         </div>
-    <div>
-        	<footer>
-        	<p>Copyright &#169; Chennupati Balu 2021. All Rights Reserved</p>
-        	<a href="https://chennupati-balu.000webhostapp.com/privacy-policy.html" style="text-decoration:none;" target="_blank">Privacy Policy</a> |
-        	<a href="https://chennupati-balu.000webhostapp.com/terms-and-conditions.html" style="text-decoration:none;" target="_blank">Terms and Conditions</a>
-        	</footer>
-        </div>
+        <script>
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            var movie_name = urlParams.get("movie_name");
+
+            if(movie_name!=null){
+                find_movie(movie_name);
+            }
+        </script>
+    </body>
 </html>
